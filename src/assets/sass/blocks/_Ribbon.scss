@@ -1,0 +1,58 @@
+.Ribbon {
+  display: inline-block;
+  background: $color-bg;
+  margin: 0.7em 0.35em;
+  font: $font-handwriting;
+  font-size: 28px;
+  width: 8em;
+  height: 8em;
+  padding: 1em;
+  position: relative;
+  vertical-align: top;
+  text-decoration: none;
+  color: $color-fg;
+
+  &:after {
+    content: "";
+    height: 0;
+    width: 0;
+    border-width: 0 4em 1em 4em;
+    border-style: solid;
+    border-color: $color-bg;
+    border-bottom-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 100%;
+  }
+
+  &__icon {
+    max-width: 4em;
+    max-height: 4em;
+    margin-bottom: 0.5em;
+
+    &--left {
+      float: left;
+      max-height: 2.5em;
+      margin-top: -0.4em;
+      margin-right: 0.8em;
+    }
+  }
+
+  &__figure {
+    overflow: hidden;
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  &__day {
+    font: $font-serif;
+    font-size: 3.5em;
+    line-height: 1;
+  }
+  &__month {
+    font-size: 1.2em;
+  }
+  &__year {
+    font: $font-serif;
+  }
+}

@@ -1,0 +1,16 @@
+// Brand palette
+$brand-color:       hsl(70, 100%, 60%);
+
+// Return the complementary colour to $brand-color
+$complement-color:    adjust_hue($brand-color, 180);
+
+// Triadic color scheme from $brand-color ? Go!
+$secondary-color:     adjust_hue($brand-color, 105);
+$tertiary-color:    adjust_hue($brand-color, 235);
+
+
+$color-fg: #333;
+$color-bg: #ded9d2;
+
+$font-serif: italic 700 1em 'Lobster Two', cursive;
+$font-handwriting: 400 1em 'little-sunshine', cursive;

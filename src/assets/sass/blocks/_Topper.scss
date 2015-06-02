@@ -1,0 +1,45 @@
+.Topper {
+  text-align: center;
+  font: $font-handwriting;
+  font-size: 70px;
+
+  &__person {
+    display: inline-block;
+    padding-top: 3em;
+    margin-bottom: 0.3em;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto 2em;
+
+    &--giacomo {
+      background-image: url('../images/g.png');
+    }
+
+    &--valentina {
+      background-image: url('../images/v.png');
+    }
+  }
+
+  &__ring {
+    display: inline-block;
+    padding: 0.6em 0.75em 0;
+    background: url(../images/ring.png) center center no-repeat;
+    background-size: contain;
+  }
+
+  &__small {
+    display: block;
+    font-size: 0.5em;
+
+    &::before,
+    &::after {
+      content: ' - ';
+    }
+  }
+
+  &__big {
+    font: $font-serif;
+    font-size: 1.2em;
+    text-shadow: 0.03em 0.03em 0 $color-bg;
+  }
+}
