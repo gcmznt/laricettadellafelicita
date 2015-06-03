@@ -1,0 +1,71 @@
+.Form {
+  font-size: 12px;
+  font: $font-handwriting;
+
+  &__title {}
+
+  &__label {
+    display: inline-block;
+    text-align: left;
+    margin: 0.2em;
+  }
+
+  &__input {
+    display: block;
+    border: 0;
+    border-bottom: 1px solid $color-bg;
+    transition: all ease 0.2s;
+    margin-bottom: 0.2em;
+    font: $font-handwriting;
+    font-size: 2em;
+    padding: 0.2em;
+    background: transparent;
+    border-radius: 0;
+    appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    height: 1.7em;
+    cursor: pointer;
+
+    &[type='text'] {
+      width: 200px;
+    }
+
+    &[type='checkbox'] {
+      height: 0;
+      width: 0;
+      overflow: hidden;
+      opacity: 0;
+      position: absolute;
+    }
+
+    &:focus,
+    &:focus + .Form__checkbox {
+      border-bottom: 3px solid $color-fg;
+      outline: none;
+      background: $color-bg;
+    }
+  }
+
+  &__checkbox {
+    width: 1.5em;
+    text-align: center;
+    cursor: pointer;
+
+    &:after {
+      content: '😢';
+
+      .Form__input:checked + & {
+        content: '😃';
+      }
+    }
+  }
+
+  &__hint {
+    transition: all ease 0.2s;
+
+    .Form__input:valid + & {
+      color: $color-bg;
+    }
+  }
+}

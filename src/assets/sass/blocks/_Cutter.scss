@@ -6,9 +6,10 @@
   background-size: cover;
   background-position: 50% 30%;
   text-align: center;
+  border-bottom: 3px solid $color-bg;
 
   &__content {
-    background: rgba(0,0,255,.5);
+    background: transparentize($color-bg, 0.5);
     position: absolute;
     height: 100%;
     width: 50%;

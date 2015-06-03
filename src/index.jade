@@ -5,7 +5,11 @@ meta(
   name="viewport"
   content="initial-scale=1.0, user-scalable=yes"
 )
-
+link(
+  rel="icon"
+  type="image/png"
+  href="/assets/images/favicon.png"
+)
 link(
   rel="stylesheet"
   href="//fonts.googleapis.com/css?family=Lobster+Two:700italic|Handlee"
@@ -62,16 +66,53 @@ body
   //-   style="background-image: url('http://lorempixel.com/1280/1024/people/5/')"
   //- )
   //-   h1.Title titolo
-  //- .Cutter.Cutter--right(
-  //- )
-  //-   .Map#Map--ceremony
-  //-   .Cutter__content
-  //-     h1 Testo
+  .Cutter.Cutter--right(
+  )
+    .Map#Map--ceremony
+  .Cutter.Cutter--right(
+  )
+    .Map#Map--church
+    //- .Cutter__content
+    //-   h1 Testo
+
   //- .Cutter.Cutter--left(
   //-   style="background-image: url('http://lorempixel.com/1280/1024/people/7/')"
   //- )
   //-   h1.Title titolo
 
+  .Cutter
+    form.Form(
+      id="rsvp"
+      method="post"
+      action="/rsvp.php"
+    )
+      h1.Form__title RSVP
+      div.Form__guest.js-guest
+        label.Form__label
+          input.Form__input(required)
+          span.Form__hint Nome
+        label.Form__label
+          input.Form__input(required)
+          span.Form__hint Cognome
+        label.Form__label
+          input.Form__input(
+            type="checkbox"
+            checked
+          )
+          .Form__input.Form__checkbox
+          span.Form__hint Verrò
+        label.Form__label
+          select.Form__input(
+            required
+          )
+            option normale
+            option vegetariano
+          span.Form__hint Menu
+      div
+        button.js-addGuest Aggiungi ospite
+        button Invia conferma
 
-  //- script(type="application/javascript", src="//maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true")
-  //- script(type="application/javascript", src="/assets/js/all.js")
+
+  script(type="application/javascript", src="//code.jquery.com/jquery-2.1.4.min.js")
+  script(type="application/javascript", src="//maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true")
+  script(type="application/javascript", src="/assets/js/all.js")

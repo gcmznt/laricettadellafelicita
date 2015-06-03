@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 
 
+gulp.task('deploy', require('./gulptasks/rsync'));
+
 gulp.task('templates', require('./gulptasks/jade'));
 gulp.task('styles', require('./gulptasks/sass'));
 gulp.task('scripts', require('./gulptasks/babel'));
