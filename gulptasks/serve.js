@@ -14,6 +14,7 @@ module.exports = function() {
   gulp.watch("./src/assets/images/*", ['images']);
   gulp.watch("./src/assets/fonts/*", ['fonts']);
   gulp.watch("./src/**/*.jade", ['templates']);
+  gulp.watch("./src/*.php", ['php']);
   gulp.watch("./dist/assets/css/style.css").on('change', browserSync.reload);
   gulp.watch("./dist/assets/js/all.js").on('change', browserSync.reload);
   gulp.watch("./dist/assets/images/*").on('change', browserSync.reload);
