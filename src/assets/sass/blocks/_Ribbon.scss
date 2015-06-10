@@ -1,7 +1,7 @@
 .Ribbon {
   display: inline-block;
   background: $color-bg;
-  margin: 0.7em 0.35em;
+  margin: 0.7em 0.35em 1.7em;
   font: $font-handwriting;
   font-size: 28px;
   width: 8em;
@@ -11,6 +11,11 @@
   vertical-align: top;
   text-decoration: none;
   color: $color-fg;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    flex: 0 0 auto;
+  }
 
   &:after {
     content: "";
@@ -23,6 +28,13 @@
     position: absolute;
     left: 0;
     top: 100%;
+  }
+
+  &--main {
+
+    @media (max-width: 768px) {
+      order: -1;
+    }
   }
 
   &__icon {

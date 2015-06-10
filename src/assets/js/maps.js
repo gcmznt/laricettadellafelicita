@@ -1,31 +1,40 @@
 
-function initialize() {
-  var coordVignola = new google.maps.LatLng(45.681387, 9.372540);
-  var coordChiesa = new google.maps.LatLng(45.631006, 9.168113);
+// let createMap = (id, coord, title) => {
+//   let m = new google.maps.Map(document.getElementById(id), {
+//     zoom: 13,
+//     scrollwheel: false,
+//     center: coord
+//   });
+//   new google.maps.Marker({
+//     position: coord,
+//     map: m,
+//     title: title
+//   });
+//   return m;
+// }
 
-  var mapVignola = new google.maps.Map(document.getElementById('Map--ceremony'), {
-    zoom: 12,
-    scrollwheel: false,
-    center: coordVignola
+
+// google.maps.event.addDomListener(window, 'load', () => {
+//   window.mapVignola = createMap(
+//     'Map--party',
+//     new google.maps.LatLng(45.681387, 9.372540),
+//     'Cascina Vignola'
+//   );
+//   window.mapChurch = createMap(
+//     'Map--church',
+//     new google.maps.LatLng(45.631006, 9.168113),
+//     'S. Pio X'
+//   );
+// });
+
+
+(function($) {
+
+  $(document).on('click', 'a[href^=#Map--]', function(event) {
+    event.preventDefault();
+    // TODO MAP
+    // $('[id^=Map--]:visible').slideToggle()
+    // $($(this).attr('href')).slideToggle();
   });
 
-  var markerVignola = new google.maps.Marker({
-      position: coordVignola,
-      map: mapVignola,
-      title: 'Cascina Vignola'
-  });
-
-  var mapChiesa = new google.maps.Map(document.getElementById('Map--church'), {
-    zoom: 12,
-    scrollwheel: false,
-    center: coordChiesa
-  });
-
-  var markerChiesa = new google.maps.Marker({
-      position: coordChiesa,
-      map: mapChiesa,
-      title: 'S. Pio X'
-  });
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
+})(jQuery);

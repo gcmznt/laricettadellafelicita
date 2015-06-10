@@ -3,13 +3,22 @@
   font: $font-handwriting;
   font-size: 70px;
 
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+
   &__person {
     display: inline-block;
-    padding-top: 3em;
+    padding-top: 2em;
     margin-bottom: 0.3em;
-    background-position: center center;
+    background-position: center 20%;
     background-repeat: no-repeat;
     background-size: auto 2em;
+
+    @media (max-width: 768px) {
+      padding-top: 3.4em;
+      background-size: auto 3.4em;
+    }
 
     &--giacomo {
       background-image: url('../images/g.png');
@@ -25,6 +34,10 @@
     padding: 0.6em 0.75em 0;
     background: url(../images/ring.png) center center no-repeat;
     background-size: contain;
+
+    @media (max-width: 768px) {
+      font-size: 0.5em;
+    }
   }
 
   &__small {

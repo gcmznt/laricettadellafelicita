@@ -1,18 +1,29 @@
 .Form {
-  font-size: 12px;
   font: $font-handwriting;
+  font-size: 16px;
 
-  &__title {}
+  &__title {
+    font: $font-serif;
+    font-size: 3em;
+  }
 
   &__label {
     display: inline-block;
     text-align: left;
+    vertical-align: top;
     margin: 0.2em;
+    transition: all ease 0.2s;
+
+    &--hidden {
+      transform: translateX(50px);
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   &__input {
     display: block;
-    border: 0;
+    border: 0 solid $color-bg;
     border-bottom: 1px solid $color-bg;
     transition: all ease 0.2s;
     margin-bottom: 0.2em;
@@ -39,20 +50,49 @@
       position: absolute;
     }
 
+    &:hover,
+    &:hover + .Form__checkbox {
+      border-bottom-width: 3px;
+    }
+
     &:focus,
     &:focus + .Form__checkbox {
       border-bottom: 3px solid $color-fg;
       outline: none;
       background: $color-bg;
     }
+
+    &:valid,
+    &:checked + .Form__checkbox {
+      border-color: green;
+    }
+
+    &--button {
+      border-width: 3px;
+      display: inline-block;
+      margin: 0.3em;
+      width: 4em;
+      height: 4em;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px -1px;
+      background-color: $color-bg;
+
+      &:valid {
+        border-color: $color-bg;
+      }
+
+      &:focus {
+        border-color: $color-fg;
+      }
+    }
   }
 
   &__checkbox {
-    width: 1.5em;
+    width: 1.8em;
     text-align: center;
     cursor: pointer;
 
-    &:after {
+    &::after {
       content: '😢';
 
       .Form__input:checked + & {
@@ -66,6 +106,59 @@
 
     .Form__input:valid + & {
       color: $color-bg;
+    }
+
+    .Form__input[type="checkbox"]:not(:checked) ~ &::before {
+      content: 'non ';
+    }
+  }
+
+  &__actions {
+    margin-top: 2em;
+  }
+
+  &__error,
+  &__success {
+    padding: 1em;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  &__error {
+    background-color: hsl(0, 100%, 95%);
+    color: hsl(0, 100%, 40%);
+  }
+
+  &__success {
+    background-color: hsl(120, 100%, 95%);
+    color: hsl(120, 100%, 40%);
+  }
+
+  &__remove {
+    height: 1.7em;
+    width: 1.7em;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px -1px;
+    transform: scale(0.6);
+    text-indent: -9999em;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: $color-fg;
+      height: 1.2em;
+      width: 0.1em;
+      top: 0.25em;
+      transform: rotate(45deg);
+      left: 0.8em;
+      border-radius: 0.2em;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
     }
   }
 }

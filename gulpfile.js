@@ -15,6 +15,13 @@ gulp.task('serve', [
   'fonts',
   'images'
 ], require('./gulptasks/serve'));
+gulp.task('compile', [
+  'templates',
+  'styles',
+  'scripts',
+  'fonts',
+  'images'
+]);
 gulp.task('default', ['serve']);
 
 
