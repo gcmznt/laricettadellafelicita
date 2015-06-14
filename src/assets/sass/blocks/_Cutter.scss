@@ -5,31 +5,7 @@
   text-align: center;
   border-bottom: 3px solid $color-bg;
 
-  &--spaced {
-    padding: 2em 0.5em;
-  }
-
-  &--map {
-    display: none;
-  }
-
   &__content {
-    background: transparentize($color-bg, 0.5);
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    left: 50%;
-    top: 0;
-  }
-
-  &--left {
-    text-align: left;
-
-    &:before {
-      right: 50%;
-      left: auto;
-      transform-origin: center right;
-      transform: rotate(18deg) scaleY(10);
-    }
+    padding: 2em 0.5em;
   }
 }

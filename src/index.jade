@@ -25,99 +25,96 @@ link(
 )
 
 body
-  .Cutter.Cutter--spaced
-    .Topper
-      .Topper__person.Topper__person--giacomo Giacomo
-      .Topper__ring &amp;
-      .Topper__person.Topper__person--valentina Valentina
-      .Topper__small sono lieti di annunciarvi il loro
-      .Topper__big Matrimonio
+  .Cutter
+    .Cutter__content
 
-    .u-flex
-      a.Ribbon(
-        href="#Map--church"
-      )
-        .Ribbon__figure
-          img.Ribbon__icon.Ribbon__icon--left(
-            src="/assets/images/chiesa.png"
-          )
-          div h 10.30
-          div S.Pio X
-        .u-small Via Molino Arese, 19
-        .u-small Cesano Maderno
-        .u-small (MB)
-
-      a.Ribbon.Ribbon--main(
-        href="#rsvp"
-      )
-        .Ribbon__day 12
-        .Ribbon__month Settembre
-        .Ribbon__year 2015
-      a.Ribbon(
-        href="#Map--party"
-      )
-        img.Ribbon__icon(
-          src="/assets/images/cascina.png"
-        )
-        div Cascina Vignola
-        .u-small Via Vignola 24
-        .u-small Osnago (LC)
-
-  //- .Cutter.Cutter--map#Map--church
-  //-   img.Img.Img--responsive(src="/assets/images/1.jpg", alt="")
-
-  //- .Cutter.Cutter--map#Map--party
-  //-   img.Img.Img--responsive(src="/assets/images/1.jpg", alt="")
+      .Topper
+        .Topper__person.Topper__person--giacomo Giacomo
+        .Topper__ring &amp;
+        .Topper__person.Topper__person--valentina Valentina
+        .Topper__small sono lieti di annunciarvi il loro
+        .Topper__big Matrimonio
 
   .Cutter
-    img.Img.Img--responsive(src="/assets/images/1.jpg", alt="")
+    img.Img.Img--responsive(src="/assets/images/2.jpg", alt="")
 
-  .Cutter.Cutter--spaced#rsvp
-    form.Form.js-rsvp(
-      id="rsvp"
-      method="post"
-      action="/rsvp.php"
-    )
-      h1.Form__title RSVP
-      .Form__guest.js-guest
-        label.Form__label
-          input.Form__input(
-            name="nome"
-            required
+  .Cutter
+    .Cutter__content
+
+      .u-flex
+        .Ribbon
+          .Ribbon__figure
+            img.Ribbon__icon.Ribbon__icon--left(
+              src="/assets/images/chiesa.png"
+            )
+            div h 10.30
+            div S.Pio X
+          .u-small Via Molino Arese, 19
+          .u-small Cesano Maderno
+          .u-small (MB)
+
+        .Ribbon.Ribbon--main
+          .Ribbon__day 12
+          .Ribbon__month Settembre
+          .Ribbon__year 2015
+        .Ribbon
+          img.Ribbon__icon(
+            src="/assets/images/cascina.png"
           )
-          span.Form__hint nome
-        label.Form__label
-          input.Form__input(
-            name="cognome"
-            required
-          )
-          span.Form__hint cognome
-        label.Form__label
-          input.Form__input(
-            type="checkbox"
-            name="presenza"
-            checked
-          )
-          .Form__input.Form__checkbox
-          span.Form__hint ci sarò
-        label.Form__label
-          select.Form__input(
-            name="menu"
-            required
-          )
-            option(value="carne") menù di carne
-            option(value="veggie") menù vegetariano
-          span.Form__hint mangerò
-        label.Form__label
-          a.Form__input.Form__remove.js-remove X
-      .Form__actions
-        button.Form__input.Form__input--button(
-          type="submit"
-        ) Invia conferma
-        button.Form__input.Form__input--button.js-addGuest Aggiungi ospite
+          div Cascina Vignola
+          .u-small Via Vignola 24
+          .u-small Osnago (LC)
+
+  .Cutter
+    .Map#Map
+
+  .Cutter#rsvp
+    .Cutter__content
+      form.Form.js-rsvp(
+        id="rsvp"
+        method="post"
+        action="/rsvp.php"
+      )
+        h1.Form__title RSVP
+        .Form__guest.js-guest
+          label.Form__label
+            input.Form__input(
+              name="nome"
+              required
+            )
+            span.Form__hint nome
+          label.Form__label
+            input.Form__input(
+              name="cognome"
+              required
+            )
+            span.Form__hint cognome
+          label.Form__label
+            input.Form__input(
+              type="checkbox"
+              name="presenza"
+              checked
+            )
+            .Form__input.Form__checkbox
+            span.Form__hint ci sarò
+          label.Form__label
+            select.Form__input(
+              name="menu"
+              required
+            )
+              option(value="carne") menù completo
+              option(value="veggie") menù vegetariano
+            span.Form__hint mangerò
+          label.Form__label
+            a.Form__input.Form__remove.js-remove X
+        .Form__actions
+          button.Form__input.Form__input--button(
+            type="submit"
+          ) Invia conferma
+          button.Form__input.Form__input--button.js-addGuest Aggiungi ospite
 
 
-  script(type="application/javascript", src="//code.jquery.com/jquery-2.1.4.min.js")
-  //- script(type="application/javascript", src="/assets/js/jquery.js")
+  //- script(type="application/javascript", src="//code.jquery.com/jquery-2.1.4.min.js")
+  script(type="application/javascript", src="/assets/js/jquery.js")
   script(type="application/javascript", src="//maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true")
   script(type="application/javascript", src="/assets/js/all.js")
