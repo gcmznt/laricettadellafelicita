@@ -3,8 +3,8 @@
   function isInList ($name = "", $lastname = "") {
     global $listCollection;
     return !!$listCollection->find(array(
-      'nome' => $name,
-      'cognome' => $lastname
+      'nome' => ucwords(strtolower($name)),
+      'cognome' => ucwords(strtolower($lastname))
     ))->count();
   }
 
