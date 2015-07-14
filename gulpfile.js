@@ -19,7 +19,7 @@ gulp.task('compile', [
   'images'
 ]);
 gulp.task('serve', ['compile'], require('./gulptasks/serve'));
-gulp.task('deploy', require('./gulptasks/rsync'));
+gulp.task('deploy', ['compile'], require('./gulptasks/rsync'));
 gulp.task('default', ['compile']);
 
 
