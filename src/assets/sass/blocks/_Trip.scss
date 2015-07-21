@@ -13,10 +13,10 @@
     height: 100%;
     top: 0;
     z-index: -1;
-    background: rgba(62,74,175,1);
-    animation: sky 10s infinite;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    background: #BDD7EA;
+    // animation: sky 10s infinite;
+    // animation-direction: alternate;
+    // animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
   }
 
   &__place {
@@ -65,11 +65,58 @@
     animation-direction: alternate;
     animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
   }
+
+  &__cloud {
+    animation: cloud 2s infinite;
+    animation-timing-function: linear;
+    width: 120px;
+    height: 40px;
+    background: rgba(255,255,255,1);
+    border-radius: 40px;
+    position: absolute;
+    top: 60%;
+    opacity: .90;
+    left: 20%;
+    margin-top: -10px;
+    -webkit-animation: cloud 3s linear infinite;
+    box-shadow: 2px 2px 0 rgba(102, 153, 204, .2);
+
+    &:before {
+      content: '';
+      width: 60px;
+      height: 60px;
+      background: rgba(255,255,255,1);
+      border-radius: 50%;
+      position: absolute;
+      top: -70%;
+      left: 15%;
+    }
+
+    &:after {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,1);
+      border-radius: 50%;
+      position: absolute;
+      top: -50%;
+      right: 12%;
+    }
+  }
 }
 
-@keyframes sky {
-  to {
-    background: rgba(145,216,242,1);
+@keyframes cloud {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
