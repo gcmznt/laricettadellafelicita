@@ -13,7 +13,7 @@ link(
 )
 link(
   rel="stylesheet"
-  href="//fonts.googleapis.com/css?family=Lobster+Two:700italic|Handlee"
+  href="//fonts.googleapis.com/css?family=Lobster+Two:700italic"
 )
 link(
   rel="stylesheet"
@@ -24,7 +24,7 @@ link(
   href="/assets/css/style.css"
 )
 
-body
+body(class="❤")
   .Cutter
     .Cutter__content
 
@@ -109,7 +109,19 @@ body
           button.Form__input.Form__input--button.js-addGuest Aggiungi ospite
 
   .Cutter
-    .Map#Map
+    .Trip
+      .Trip__plane
+      .Trip__place.Trip__place--japan
+      .Trip__place.Trip__place--polynesia
+
+  .Cutter
+    .Cutter__content
+      .Cutter__title Il nostro viaggio in Giappone e Polinesia
+      p.
+        Se volete regalarci un pezzo del nostro primo viaggio insieme potete
+        effettuare un bonifico intestato a
+        <span class="u-underline">Zinetti e Mallamaci</span>
+        sull'Iban <span class="u-underline">IT55O0301503200000002813579</span>
 
 
   //- script(type="application/javascript", src="//code.jquery.com/jquery-2.1.4.min.js")

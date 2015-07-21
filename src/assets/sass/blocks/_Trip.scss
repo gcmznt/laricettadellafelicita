@@ -1,0 +1,106 @@
+.Trip {
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 180px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+    background: rgba(62,74,175,1);
+    animation: sky 10s infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+
+  &__place {
+    background-size: auto 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0;
+    left: -50%;
+    height: 180px;
+    width: 200%;
+    opacity: 0;
+    animation: city 20s infinite;
+    animation-timing-function: linear;
+
+    &::after {
+      width: 100%;
+      height: 100px;
+      content: '';
+      position: absolute;
+      top: 99%;
+      left: 0;
+      background-color: #1C1C1C;
+      transform: scaleX(2);
+    }
+
+    &--japan {
+      background-image: url('../images/japan.png');
+    }
+
+    &--polynesia {
+      background-image: url('../images/polynesia.png');
+      animation-delay: 10s;
+    }
+  }
+
+  &__plane {
+    background-image: url('../images/plane.png');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100px;
+    padding-bottom: 100px;
+    animation: plane 2s infinite;
+    animation-direction: alternate;
+    animation-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+}
+
+@keyframes sky {
+  to {
+    background: rgba(145,216,242,1);
+  }
+}
+
+@keyframes plane {
+  from {
+    transform: rotate(-10deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes city {
+  0% {
+    transform: scale(0.3) translateY(200%);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(0.85) translateY(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1) translateY(-10%);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(3) translateY(200%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3) translateY(200%);
+    opacity: 0;
+  }
+}

@@ -7,5 +7,12 @@
 
   &__content {
     padding: 2em 0.5em;
+    font: $font-handwriting;
+    font-size: 28px;
+  }
+
+  &__title {
+    font: $font-handwriting;
+    font-size: 48px;
   }
 }
