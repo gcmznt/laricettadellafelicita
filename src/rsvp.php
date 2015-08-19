@@ -35,8 +35,9 @@
     }
     $response['status'] = 'ok';
     $response['message'] = 'Grazie per la conferma!';
+    $response['guests'] = $guests;
+    $response['mail'] = mail("giacomo.zinetti@gmail.com", "RSVP", $_POST['guests']) ? 'ok' : 'ko';
     header("HTTP/1.1 200 OK");
-    // TODO inviare mail
   } else {
     $response['status'] = 'ko';
     $response['message'] = 'Ci spiace ma il tuo nome non ci risulta tra gli invitati';
