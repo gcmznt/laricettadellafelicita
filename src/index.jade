@@ -40,6 +40,7 @@ body(class="❤")
           .Ribbon__figure
             img.Ribbon__icon.Ribbon__icon--left(
               src="/assets/images/chiesa.png"
+              alt="chiesa"
             )
             div h 10.30
             div S.Pio X
@@ -54,13 +55,14 @@ body(class="❤")
         .Ribbon
           img.Ribbon__icon(
             src="/assets/images/cascina.png"
+            alt="Cascina"
           )
           div Cascina Vignola
           .u-small Via Vignola 24
           .u-small Osnago (LC)
 
   .Cutter
-    img.Img.Img--responsive(src="/assets/images/2.jpg", alt="")
+    img.Img.Img--responsive(src="/assets/images/2.jpg" alt="Giko e Vale")
 
   .Cutter#rsvp
     .Cutter__content
@@ -103,10 +105,10 @@ body(class="❤")
           label.Form__label
             a.Form__input.Form__remove.js-remove X
         .Form__actions
+          button.Form__input.Form__input--button.js-addGuest Aggiungi ospite
           button.Form__input.Form__input--button(
             type="submit"
           ) Invia conferma
-          button.Form__input.Form__input--button.js-addGuest Aggiungi ospite
 
   .Cutter
     .Trip
@@ -123,16 +125,12 @@ body(class="❤")
       p.
         <span class="u-underline">Zinetti e Mallamaci</span>
         Iban: <span class="u-underline">IT55O0301503200000002813579</span>
+      p.
+        Come causale segnate il vostro nome!
 
-
-  //- script(type="application/javascript", src="//code.jquery.com/jquery-2.1.4.min.js")
   script(
     type="application/javascript"
-    src="/assets/js/jquery.js"
-  )
-  script(
-    type="application/javascript"
-    src="//maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"
+    src="//code.jquery.com/jquery-2.1.4.min.js"
   )
   script(
     type="application/javascript"
