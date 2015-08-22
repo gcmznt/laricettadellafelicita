@@ -34,14 +34,11 @@
     foreach ($guests as $g) {
       $g->date = $now;
       $rsvpCollection->insert($g);
-      $t = ($g->presenza ? '✓ ' : '✗ ') + $g->nome + ' ' + $g->cognome + ': ' + $g->menu;
+      $t = ($g->presenza ? '✓ ' : '✗ ') . $g->nome . ' ' . $g->cognome . ': ' . $g->menu;
       $text[] = $t;
 
-      $curl = curl_init();
-      curl_setopt_array($curl, array(
-          CURLOPT_RETURNTRANSFER => 1,
-          CURLOPT_URL => 'https://api.telegram.org/bot' + BOT_ID + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + $t
-      ));
+      $curl = curl_init('https://api.telegram.org/bot' . BOT_ID . '/sendMessage?chat_id=' . CHAT_ID . '&text=' . $t);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
       $resp = curl_exec($curl);
       curl_close($curl);
     }
@@ -53,13 +50,10 @@
     header("HTTP/1.1 200 OK");
   } else {
     foreach ($guests as $g) {
-      $t = 'Ha provato ad iscriversi ' + $g->nome + ' ' + $g->cognome;
+      $t = 'Ha provato ad iscriversi ' . $g->nome . ' ' . $g->cognome;
 
-      $curl = curl_init();
-      curl_setopt_array($curl, array(
-          CURLOPT_RETURNTRANSFER => 1,
-          CURLOPT_URL => 'https://api.telegram.org/bot' + BOT_ID + '/sendMessage?chat_id=' + CHAT_ID + '&text=' + $t
-      ));
+      $curl = curl_init('https://api.telegram.org/bot' . BOT_ID . '/sendMessage?chat_id=' . CHAT_ID . '&text=' . $t);
+      curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
       $resp = curl_exec($curl);
       curl_close($curl);
     }
