@@ -15,7 +15,7 @@ module.exports = function () {
       emptyDirectories: true,
       recursive: true,
       clean: true,
-      exclude: ['.DS_Store'],
+      exclude: ['.DS_Store', 'uploads'],
       include: []
     }));
 };

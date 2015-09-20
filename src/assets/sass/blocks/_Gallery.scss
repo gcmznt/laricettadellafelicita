@@ -1,0 +1,27 @@
+.Gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    padding: 15px;
+    box-shadow: 0 0 5px #999;
+    border-radius: 3px;
+    margin: 10px;
+    max-width: 280px;
+
+    .Img {
+      max-height: 200px;
+      max-width: 100%;
+
+      + figcaption {
+        padding-top: 10px;
+      }
+    }
+
+    figcaption {
+      font-size: 0.8em;
+    }
+  }
+}

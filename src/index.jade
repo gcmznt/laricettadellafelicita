@@ -21,7 +21,7 @@ link(
 )
 link(
   rel="stylesheet"
-  href="/assets/css/style.css"
+  href="/assets/css/style.css?dimM9gAr5b"
 )
 
 body(class="❤")
@@ -62,53 +62,89 @@ body(class="❤")
           .u-small Osnago (LC)
 
   .Cutter
-    img.Img.Img--responsive(src="/assets/images/2.jpg" alt="Giko e Vale")
+    .Slider
+      .Slider__arrow.Slider__arrow--prev prev
+      .Slider__arrow.Slider__arrow--next next
+      .Slider__items
+        .Slider__item.Slider__item--active
+          img.Img.Img--responsive(src="/assets/images/allegria.jpg" alt="Allegria")
+          .Slider__title Allegria
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/amicizia.jpg" alt="Amicizia")
+          .Slider__title Amicizia
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/amore.jpg" alt="Amore")
+          .Slider__title Amore
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/complicita.jpg" alt="Complicità")
+          .Slider__title Complicità
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/comprensione.jpg" alt="Comprensione")
+          .Slider__title Comprensione
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/comunicazione.jpg" alt="Comunicazione")
+          .Slider__title Comunicazione
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/condivisione.jpg" alt="Condivisione")
+          .Slider__title Condivisione
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/fedelta.jpg" alt="Fedeltà")
+          .Slider__title Fedeltà
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/fiducia.jpg" alt="Fiducia")
+          .Slider__title Fiducia
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/follia.jpg" alt="Follia")
+          .Slider__title Follia
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/impegno.jpg" alt="Impegno")
+          .Slider__title Impegno
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/passione.jpg" alt="Passione")
+          .Slider__title Passione
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/pazienza.jpg" alt="Pazienza")
+          .Slider__title Pazienza
+        .Slider__item
+          img.Img.Img--responsive(src="/assets/images/supporto.jpg" alt="Supporto")
+          .Slider__title Supporto
 
-  .Cutter#rsvp
+  .Cutter
     .Cutter__content
-      form.Form.js-rsvp(
-        id="rsvp"
+      .Cutter__title Condividi la felicità!
+      form#up-form.Form.u-flex.u-full(
+        action="/foto"
         method="post"
-        action="/rsvp.php"
+        enctype="multipart/form-data"
       )
-        h1.Form__title RSVP
-        .Form__guest.js-guest
+        div
+          p.Form__text 1. Lascia un pensiero
+          textarea#text.Form__textarea(
+            name="text"
+            placeholder="Scrivi qui..."
+          )
+        div
+          p.Form__text 2. Scegli una foto
+          img.Img--responsive.Img--upload#show-picture
+          input#take-picture(
+            type="file"
+            accept="image/*;capture=camera"
+            name="foto"
+          )
+        div
+          p.Form__text 3. Inserisci il codice
           label.Form__label
-            input.Form__input(
-              name="nome"
+            input#codice.Form__input(
+              name="codice"
               required
             )
-            span.Form__hint nome
-          label.Form__label
-            input.Form__input(
-              name="cognome"
-              required
-            )
-            span.Form__hint cognome
-          label.Form__label
-            input.Form__input(
-              type="checkbox"
-              name="presenza"
-              checked
-            )
-            .Form__input.Form__checkbox
-            span.Form__hint ci sarò
-          label.Form__label
-            select.Form__input(
-              name="menu"
-              required
-            )
-              option(value="") scegli il tuo menù...
-              option(value="carne") menù di carne
-              option(value="veggie") menù vegetariano
-            span.Form__hint mangerò
-          label.Form__label
-            a.Form__input.Form__remove.js-remove X
-        .Form__actions
-          button.Form__input.Form__input--button.js-addGuest Aggiungi ospite
-          button.Form__input.Form__input--button(
+            span.Form__hint codice
+          button#up-button.Form__input.Form__input--button(
             type="submit"
-          ) Invia conferma
+          ) 4. Carica
+      p
+        a(href="/foto/")
+          | Vedi tutte le foto
 
   .Cutter
     .Trip
@@ -124,7 +160,7 @@ body(class="❤")
         effettuare un bonifico intestato a:
       p.
         <span class="u-underline">Zinetti e Mallamaci</span>
-        Iban: <span class="u-underline">IT55O0301503200000002813579</span>
+        Iban: <span class="u-underline u-sserif">IT55O0301503200000002813579</span>
       p.
         Come causale segnate il vostro nome!
 
@@ -134,5 +170,5 @@ body(class="❤")
   )
   script(
     type="application/javascript"
-    src="/assets/js/all.js"
+    src="/assets/js/all.js?dimM9gAr5b"
   )

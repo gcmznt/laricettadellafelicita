@@ -1,0 +1,94 @@
+.Slider {
+  height: 0px;
+  padding-bottom: 56%;
+  width: 100%;
+  position: relative;
+
+  &__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: $color-bg;
+    font: $font-handwriting;
+    font-size: 50px;
+    text-shadow: 0 0 7px black;
+    width: 100%;
+    background: rgba($color-bg, .3);
+
+    @media (max-width: 600px) {
+      font-size: 30px;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    background-color: $color-bg;
+    color: $color-bg;
+    z-index: 3;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 15px black;
+    cursor: pointer;
+
+    .is-touch & {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      border: 8px solid transparent;
+      height: 0;
+      width: 0;
+      top: 50%;
+      left: 50%;
+    }
+
+    &--prev {
+      left: 20px;
+
+      &::after {
+        border-right: 12px solid $color-fg;
+        border-left: 0;
+        transform: translate(-65%, -50%);
+      }
+    }
+
+    &--next {
+      right: 20px;
+
+      &::after {
+        border-left: 12px solid $color-fg;
+        border-right: 0;
+        transform: translate(-35%, -50%);
+      }
+    }
+  }
+
+  &__item {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    position: absolute;
+    // transform: translateX(-100%);
+    transition: all ease 500ms;
+    opacity: 0;
+
+    &--active {
+      // transform: translateX(0);
+      z-index: 1;
+      opacity: 1;
+    }
+
+    &--active ~ & {
+      // transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+}

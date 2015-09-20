@@ -1,0 +1,45 @@
+  .Cutter#rsvp
+    .Cutter__content
+      form.Form.js-rsvp(
+        id="rsvp"
+        method="post"
+        action="/rsvp.php"
+      )
+        h1.Form__title RSVP
+        .Form__guest.js-guest
+          label.Form__label
+            input.Form__input(
+              name="nome"
+              required
+            )
+            span.Form__hint nome
+          label.Form__label
+            input.Form__input(
+              name="cognome"
+              required
+            )
+            span.Form__hint cognome
+          label.Form__label
+            input.Form__input(
+              type="checkbox"
+              name="presenza"
+              checked
+            )
+            .Form__input.Form__checkbox
+            span.Form__hint ci sarò
+          label.Form__label
+            select.Form__input(
+              name="menu"
+              required
+            )
+              option(value="") scegli il tuo menù...
+              option(value="carne") menù di carne
+              option(value="veggie") menù vegetariano
+            span.Form__hint mangerò
+          label.Form__label
+            a.Form__input.Form__remove.js-remove X
+        .Form__actions
+          button.Form__input.Form__input--button.js-addGuest Aggiungi ospite
+          button.Form__input.Form__input--button(
+            type="submit"
+          ) Invia conferma
