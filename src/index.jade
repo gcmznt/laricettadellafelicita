@@ -111,40 +111,7 @@ body(class="❤")
 
   .Cutter
     .Cutter__content
-      .Cutter__title Condividi la felicità!
-      form#up-form.Form.u-flex.u-full(
-        action="/foto"
-        method="post"
-        enctype="multipart/form-data"
-      )
-        div
-          p.Form__text 1. Lascia un pensiero
-          textarea#text.Form__textarea(
-            name="text"
-            placeholder="Scrivi qui..."
-          )
-        div
-          p.Form__text 2. Scegli una foto
-          img.Img--responsive.Img--upload#show-picture
-          input#take-picture(
-            type="file"
-            accept="image/*;capture=camera"
-            name="foto"
-          )
-        div
-          p.Form__text 3. Inserisci il codice
-          label.Form__label
-            input#codice.Form__input(
-              name="codice"
-              required
-            )
-            span.Form__hint codice
-          button#up-button.Form__input.Form__input--button(
-            type="submit"
-          ) 4. Carica
-      p
-        a(href="/foto/")
-          | Vedi tutte le foto
+      .Cutter__title Grazie a tutti per averci regalato un sogno!
 
   .Cutter
     .Trip
@@ -152,17 +119,7 @@ body(class="❤")
       .Trip__place.Trip__place--japan
       .Trip__place.Trip__place--polynesia
 
-  .Cutter
-    .Cutter__content
-      .Cutter__title Il nostro viaggio in Giappone e Polinesia
-      p.
-        Se volete regalarci un pezzo del nostro primo viaggio insieme potete
-        effettuare un bonifico intestato a:
-      p.
-        <span class="u-underline">Zinetti e Mallamaci</span>
-        Iban: <span class="u-underline u-sserif">IT55O0301503200000002813579</span>
-      p.
-        Come causale segnate il vostro nome!
+
 
   script(
     type="application/javascript"
