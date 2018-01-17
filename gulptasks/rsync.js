@@ -5,7 +5,7 @@ var rsync = require("gulp-rsync");
 module.exports = function () {
   return gulp.src("dist/")
     .pipe(rsync({
-      destination: '/var/vhost/laricettadellafelicita/docroot/',
+      destination: '/var/vhosts/laricettadellafelicita.it/docroot/',
       root: 'dist/',
       hostname: '46.101.225.6',
       username: 'root',
