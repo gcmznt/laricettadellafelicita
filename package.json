@@ -18,7 +18,7 @@
     "imagemin-pngquant": "^4.1.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp compile"
   },
   "author": "",
   "license": "ISC"
