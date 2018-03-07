@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "little-sunshine";
+    src: url("little-sunshine.eot");
+    src: url("little-sunshine.eot?#iefix") format("embedded-opentype"),
+         url("little-sunshine.woff") format("woff"),
+         url("little-sunshine.ttf") format("truetype"),
+         url("little-sunshine.svg#little-sunshine") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
