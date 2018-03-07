@@ -1,15 +1,15 @@
-function prev () {
-  var e = document.getElementsByClassName('Slider__item--active')[0];
-  e.classList.remove('Slider__item--active');
+function prev() {
+  var e = document.querySelector(".Slider__item--active");
+  e.classList.remove("Slider__item--active");
   var prev = e.previousElementSibling || e.parentElement.lastChild;
-  prev.classList.add('Slider__item--active');
+  prev.classList.add("Slider__item--active");
 }
 
-function next () {
-  var e = document.getElementsByClassName('Slider__item--active')[0];
-  e.classList.remove('Slider__item--active');
+function next() {
+  var e = document.querySelector(".Slider__item--active");
+  e.classList.remove("Slider__item--active");
   var next = e.nextElementSibling || e.parentElement.firstChild;
-  next.classList.add('Slider__item--active');
+  next.classList.add("Slider__item--active");
 }
 
 if (document.querySelector(".Slider__item--active")) {
@@ -21,9 +21,8 @@ if (document.querySelector(".Slider__item--active")) {
     .querySelector(".Slider__arrow--prev")
     .addEventListener("click", prev);
 
-
-  document.addEventListener('touchstart', handleTouchStart, false);
-  document.addEventListener('touchmove', handleTouchMove, false);
+  document.addEventListener("touchstart", handleTouchStart, false);
+  document.addEventListener("touchmove", handleTouchMove, false);
 
   var xDown = null;
   var yDown = null;
@@ -31,7 +30,7 @@ if (document.querySelector(".Slider__item--active")) {
   function handleTouchStart(evt) {
     xDown = evt.touches[0].clientX;
     yDown = evt.touches[0].clientY;
-  };
+  }
 
   function handleTouchMove(evt) {
     if (!xDown || !yDown) return;
@@ -43,32 +42,17 @@ if (document.querySelector(".Slider__item--active")) {
     var yDiff = yDown - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-      if ( xDiff > 0 ) {
-        /* left swipe */
+      if (xDiff > 0) {
         next();
       } else {
-        /* right swipe */
         prev();
       }
-    // } else {
-      // if ( yDiff > 0 ) {
-      //   /* up swipe */
-      // } else {
-      //   /* down swipe */
-      // }
     }
-    /* reset values */
     xDown = null;
     yDown = null;
-  };
+  }
 }
 
-function is_touch_device() {
-  return (('ontouchstart' in window)
-          || (navigator.MaxTouchPoints > 0)
-          || (navigator.msMaxTouchPoints > 0));
-}
-
-if (is_touch_device()) {
-  // document.body.classList.add('is-touch')
-}
+document
+  .querySelectorAll("[data-lazy-src]")
+  .forEach(e => e.setAttribute("src", e.dataset.lazySrc));
