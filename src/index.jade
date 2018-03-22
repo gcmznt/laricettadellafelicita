@@ -1,3 +1,12 @@
+mixin image(name)
+  picture
+    source(data-lazy-srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_600/v1521750663/laricettadellafelicita/#{name}.jpg" media="(max-width: 600px)")
+    source(data-lazy-srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_800/v1521750663/laricettadellafelicita/#{name}.jpg" media="(max-width: 800px)")
+    source(data-lazy-srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_1200/v1521750663/laricettadellafelicita/#{name}.jpg" media="(max-width: 1200px)")
+    source(data-lazy-srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_1600/v1521750663/laricettadellafelicita/#{name}.jpg" media="(max-width: 1600px)")
+    img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/#{name}.jpg" alt=name)
+
+
 doctype html
 title La Ricetta della Felicità
 
@@ -67,46 +76,52 @@ body(class="❤")
       .Slider__arrow.Slider__arrow--next next
       .Slider__items
         .Slider__item.Slider__item--active
-          img.Img.Img--responsive(src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/allegria.jpg" alt="Allegria")
+          picture
+            source(srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_600/v1521750663/laricettadellafelicita/allegria.jpg" media="(max-width: 600px)")
+            source(srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_800/v1521750663/laricettadellafelicita/allegria.jpg" media="(max-width: 800px)")
+            source(srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_1200/v1521750663/laricettadellafelicita/allegria.jpg" media="(max-width: 1200px)")
+            source(srcset="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_1600/v1521750663/laricettadellafelicita/allegria.jpg" media="(max-width: 1600px)")
+            img.Img.Img--responsive(src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/allegria.jpg" alt="Allegria")
+
           .Slider__title Allegria
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/amicizia.jpg" alt="Amicizia")
+          +image('amicizia')
           .Slider__title Amicizia
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/amore.jpg" alt="Amore")
+          +image('amore')
           .Slider__title Amore
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/complicita.jpg" alt="Complicità")
+          +image('complicita')
           .Slider__title Complicità
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/comprensione.jpg" alt="Comprensione")
+          +image('comprensione')
           .Slider__title Comprensione
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/comunicazione.jpg" alt="Comunicazione")
+          +image('comunicazione')
           .Slider__title Comunicazione
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/condivisione.jpg" alt="Condivisione")
+          +image('condivisione')
           .Slider__title Condivisione
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/fedelta.jpg" alt="Fedeltà")
+          +image('fedelta')
           .Slider__title Fedeltà
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/fiducia.jpg" alt="Fiducia")
+          +image('fiducia')
           .Slider__title Fiducia
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/follia.jpg" alt="Follia")
+          +image('follia')
           .Slider__title Follia
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/impegno.jpg" alt="Impegno")
+          +image('impegno')
           .Slider__title Impegno
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/passione.jpg" alt="Passione")
+          +image('passione')
           .Slider__title Passione
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/pazienza.jpg" alt="Pazienza")
+          +image('pazienza')
           .Slider__title Pazienza
         .Slider__item
-          img.Img.Img--responsive(data-lazy-src="https://res.cloudinary.com/giko/image/upload/c_scale,f_auto,q_auto,w_2000/v1521750663/laricettadellafelicita/supporto.jpg" alt="Supporto")
+          +image('supporto')
           .Slider__title Supporto
 
   .Cutter

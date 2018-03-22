@@ -54,5 +54,8 @@ if (document.querySelector(".Slider__item--active")) {
 }
 
 document
+  .querySelectorAll("[data-lazy-srcset]")
+  .forEach(e => e.setAttribute("srcset", e.dataset.lazySrcset));
+document
   .querySelectorAll("[data-lazy-src]")
   .forEach(e => e.setAttribute("src", e.dataset.lazySrc));
