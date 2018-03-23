@@ -7,7 +7,7 @@ gulp.task('styles', require('./gulptasks/sass'));
 gulp.task('scripts', require('./gulptasks/babel'));
 gulp.task('images', require('./gulptasks/imagemin'));
 gulp.task('fonts', require('./gulptasks/fonts'));
-gulp.task('php', require('./gulptasks/php'));
+gulp.task('copy', require('./gulptasks/copy'));
 
 // Aggregated
 gulp.task('compile', [
@@ -15,7 +15,7 @@ gulp.task('compile', [
   'styles',
   'scripts',
   'fonts',
-  'php',
+  'copy',
   'images'
 ]);
 gulp.task('serve', ['compile'], require('./gulptasks/serve'));
